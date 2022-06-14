@@ -13,13 +13,36 @@
     align-items: center;
 }
 
+
+
 .ModalWindow {
+    position: relative;
     cursor: default;
-    max-width: 500px;
+    padding: 50px;
+    line-height: 1.5em;
+    width: 500px;
     height: 300px;
-    background-color: rgb(83, 134, 230);
+    border-radius: 10px;
+    background-color: #fff;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+}
+
+.btnModal {
+    cursor: pointer;
+    position: absolute;
+    border-radius: 0px 5px 0px 0px;
+    border: none;
+    background-color:rgb(230, 83, 83);
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transition: all .2s;
+}
+
+.btnModal:hover {
+    background: #FF8345;
+    transition: all .2s;
 }

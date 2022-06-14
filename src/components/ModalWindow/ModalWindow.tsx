@@ -10,6 +10,9 @@ const ModalWindow: React.FC = () => {
     return (
         <div onClick={closeModal} className="bgModalWindow">
             <div onClick={(e) => e.stopPropagation()} className="ModalWindow">
+                <button type="button" onClick={closeModal} className='btnModal'>
+                    <img src="./img/icon/delete.png" />
+                </button>
                 <div>
                     <div>Company Name: {company.name}</div>
                     <div>Catch Phrase: {company.catchPhrase}</div>
