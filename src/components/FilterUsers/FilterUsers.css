@@ -1,0 +1,51 @@
+.filterForm {
+    background: #D4F0E4;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.filterWrapp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 40px;
+}
+
+.filterInput {
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0 10px;
+    color: #3A3852;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.filterReset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1EC28B;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    border-radius: 0px 5px 5px 0px;
+    transition: all .2s;
+}
+
+.filterReset:hover {
+    background: #FF8345;
+    transition: all .2s;
+}

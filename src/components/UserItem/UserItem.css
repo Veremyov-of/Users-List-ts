@@ -1,0 +1,66 @@
+.userItem {
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 10px 25px;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    width: 450px;
+    height: 90px;
+    animation: userFetch .3s linear
+}
+
+.userInfo {
+    width: 300px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.35em;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: none;
+    border-right: 1px solid #E1E1E1;
+    background: none;
+}
+
+.btnDelete {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background: rgb(230, 83, 83);
+    position: relative;
+    z-index: 2;
+    transition: all .2s;
+}
+
+.btnDelete:hover {
+    background-color: rgb(240, 59, 59);
+    transition: all .2s;
+}
+
+@keyframes userFetch {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+    .userItem {
+        padding: 10px 15px;
+        width: 310px;
+    }
+    .userInfo {
+        font-size: 14px;
+        width: 220px;
+    }
+}
