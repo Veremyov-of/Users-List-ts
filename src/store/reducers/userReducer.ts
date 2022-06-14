@@ -21,7 +21,7 @@ export const userReducer = (state = initialState, action: UserAction): UserState
             return { ...state, loading: false, error: action.payload, users: [] };
         case UserActionTypes.USER_DELETE:
             const newUsers = state.users.filter(item => item.id !== action.payload);
-            return { ...state, users: [...newUsers] };
+            return { ...state, users: [...newUsers], filterUsers: [...newUsers] };
         case UserActionTypes.USER_MODAL_WINDOW:
             return { ...state, modalWindow: {...action.payload} };
         case UserActionTypes.USER_TOGGLE_MODAL_WINDOW:
