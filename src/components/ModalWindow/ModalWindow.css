@@ -46,3 +46,10 @@
     background: #FF8345;
     transition: all .2s;
 }
+
+@media screen and (max-width: 480px) {
+    .ModalWindow {
+        padding: 10px;
+        width: 300px;
+    }
+}

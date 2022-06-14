@@ -5,8 +5,8 @@ const initialState: UserState = {
     filterText: '',
     users: [],
     loading: false,
-    error: null,
     modalWindow: {},
+    error: null,
     toggleModalWindow: false,
 }
 

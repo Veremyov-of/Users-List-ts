@@ -1,17 +1,18 @@
 import { useActions } from './../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useCallback } from 'react';
-import Hightlight from '../Hightlight/Hightlight';
 
+//components
+import Hightlight from '../Hightlight/Hightlight';
 
 //css
 import "./UserItem.css";
 
+//types
+import { User } from '../../types/user';
 
 
-
-
-const UserItem = ({ user }: any) => {
+const UserItem: React.FC<User> = ({ ...user }: User) => {
     const { filterText } = useTypedSelector(state => state.user);
     const { deleteUser, modalWindow, toggleModal } = useActions();
 

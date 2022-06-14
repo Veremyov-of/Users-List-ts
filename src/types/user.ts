@@ -20,13 +20,13 @@ interface Company {
 }
 
 export interface UserState {
-    filterUsers?: any[];
-    filterText?: string;
+    filterUsers: User[];
+    filterText: string;
     users: User[];
     loading: boolean;
     error: null | string;
-    modalWindow?: any;
-    toggleModalWindow?: boolean;
+    modalWindow: any;
+    toggleModalWindow: boolean;
 }
 
 export enum UserActionTypes {
@@ -50,7 +50,7 @@ interface FetchUsersAction {
 
 interface FetchUsersSuccessAction {
     type: UserActionTypes.FETCH_USERS_SUCCESS;
-    payload: any[];
+    payload: User[];
 }
 
 interface FetchUsersErrorAction {
