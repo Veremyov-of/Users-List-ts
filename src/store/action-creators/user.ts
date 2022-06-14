@@ -5,6 +5,7 @@ import { User } from './../../types/user';
 
 export const fetchUsers = () => {
     return async (dispatch: Dispatch<UserAction>) => {
+        dispatch({ type: UserActionTypes.FETCH_USERS });
         fetch('https://jsonplaceholder.typicode.com/users')
             .then( response => {
                 if(!response.ok) { throw response }
