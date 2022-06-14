@@ -8,15 +8,14 @@ import './FilterUsers.css';
 function FilterUsers() {
     const { filterText } = useTypedSelector(state => state.user);
 
-    const { filterUsers } = useActions();
+    const { filterUsers, resetUsers } = useActions();
 
-    const test = (value: string) => filterUsers(value);
-
+    const changeFilter = (value: string) => filterUsers(value);
     return (
         <form className='filterForm'>
             <div className='filterWrapp'>
-                <input className='filterInput' onChange={(e) => test(e.target.value)} value={filterText} />
-                <button type='button' className='filterReset' onClick={() => test('')}>
+                <input className='filterInput' onChange={(e) => changeFilter(e.target.value)} value={filterText} />
+                <button type='button' className='filterReset' onClick={() => resetUsers()}>
                     <img src='./img/icon/reset.png' alt="reset" />
                 </button>
             </div>

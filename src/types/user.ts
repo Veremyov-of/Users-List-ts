@@ -20,6 +20,7 @@ interface Company {
 }
 
 export interface UserState {
+    resetUsers: User[];
     filterUsers: User[];
     filterText: string;
     users: User[];
@@ -37,6 +38,7 @@ export enum UserActionTypes {
     USER_MODAL_WINDOW = 'USER_MODAL_WINDOW',
     USER_TOGGLE_MODAL_WINDOW = 'USER_TOGGLE_MODAL_WINDOW',
     FILTER_USERS = 'FILTER_USERS',
+    RESET_USERS = 'RESET_USERS',
 }
 
 interface FilterUsers {
@@ -67,9 +69,14 @@ interface UserModalWindowAction {
     type: UserActionTypes.USER_MODAL_WINDOW;
     payload: User;
 }
+
 interface UserToggleModalWindowAction {
     type: UserActionTypes.USER_TOGGLE_MODAL_WINDOW;
     payload: boolean;
 }
 
-export type UserAction = FetchUsersAction | FetchUsersSuccessAction | FetchUsersErrorAction | UsersDeleteAction | UserModalWindowAction | UserToggleModalWindowAction | FilterUsers;
+interface UserResetAction {
+    type: UserActionTypes.RESET_USERS;
+}
+
+export type UserAction = FetchUsersAction | FetchUsersSuccessAction | FetchUsersErrorAction | UsersDeleteAction | UserModalWindowAction | UserToggleModalWindowAction | FilterUsers | UserResetAction;

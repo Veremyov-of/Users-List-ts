@@ -38,3 +38,7 @@ export const toggleModal = (toggleModalWindow: boolean): UserAction => {
 export const filterUsers = (filterText: string) : UserAction => {
     return { type: UserActionTypes.FILTER_USERS, payload: filterText };
 }
+
+export const resetUsers = () : UserAction => {
+    return { type: UserActionTypes.RESET_USERS };
+}

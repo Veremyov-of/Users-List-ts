@@ -1,6 +1,7 @@
 import { UserAction, UserActionTypes, UserState } from "../../types/user";
 
 const initialState: UserState = {
+    resetUsers: [],
     filterUsers: [],
     filterText: '',
     users: [],
@@ -16,7 +17,7 @@ export const userReducer = (state = initialState, action: UserAction): UserState
         case UserActionTypes.FETCH_USERS:
             return { ...state, loading: true, error: null, users: [] };
         case UserActionTypes.FETCH_USERS_SUCCESS:
-            return { ...state, loading: false, error: null, users: action.payload, filterUsers: action.payload};
+            return { ...state, loading: false, error: null, users: action.payload, filterUsers: action.payload, resetUsers: action.payload};
         case UserActionTypes.FETCH_USERS_ERROR:
             return { ...state, loading: false, error: action.payload, users: [] };
         case UserActionTypes.USER_DELETE:
@@ -30,6 +31,9 @@ export const userReducer = (state = initialState, action: UserAction): UserState
             const reg = new RegExp(action.payload, 'i');
             const filterArr = state.users.filter(item => reg.test(item.name) || reg.test(item.username) || reg.test(item.email) ? item : null);
             return { ...state, filterText: action.payload, filterUsers: filterArr};
+        case UserActionTypes.RESET_USERS:
+            console.log(state.users)
+            return { ...state, filterText: '', filterUsers: state.resetUsers, users: state.resetUsers };
 
         default: 
             return state;
