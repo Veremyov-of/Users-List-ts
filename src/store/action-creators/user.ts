@@ -5,18 +5,20 @@ import { User } from './../../types/user';
 
 export const fetchUsers = () => {
     return async (dispatch: Dispatch<UserAction>) => {
-        try {
-            dispatch({ type: UserActionTypes.FETCH_USERS });
-            const response = await fetch('https://jsonplaceholder.typicode.com/users');
-            const data = await response.json();
-            dispatch({ type: UserActionTypes.FETCH_USERS_SUCCESS, payload: data });
-
-        } catch(e) {
-            dispatch({ 
-                type: UserActionTypes.FETCH_USERS_ERROR, 
-                payload: 'error'
-            });
-        }
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then( response => {
+                if(!response.ok) { throw response }
+                return response.json()
+            })
+            .then( json => {
+                dispatch({ type: UserActionTypes.FETCH_USERS_SUCCESS, payload: json });
+            })
+            .catch( err => {
+                dispatch({ 
+                    type: UserActionTypes.FETCH_USERS_ERROR, 
+                    payload: err
+                });
+            })
     }
 }
 

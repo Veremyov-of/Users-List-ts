@@ -7,7 +7,7 @@ import { useTypedSelector } from './../../hooks/useTypedSelector';
 //components
 import UserItem from '../UserItem/UserItem';
 import ModalWindow from '../ModalWindow/ModalWindow';
-import Error from '../Error/Error';
+import Error from '../../UI/Error/Error';
 
 //css
 import './UserList.css';

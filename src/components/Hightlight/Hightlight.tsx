@@ -1,7 +1,7 @@
 //css
 import './Hightlight.css';
 
-const Hightlight = ({props}: any) => {
+const Hightlight = (props: any) => {
     const { filter, str } = props;
     if (!filter) return str;
     const regexp = new RegExp(filter, 'ig');
