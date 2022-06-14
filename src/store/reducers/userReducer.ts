@@ -32,7 +32,6 @@ export const userReducer = (state = initialState, action: UserAction): UserState
             const filterArr = state.users.filter(item => reg.test(item.name) || reg.test(item.username) || reg.test(item.email) ? item : null);
             return { ...state, filterText: action.payload, filterUsers: filterArr};
         case UserActionTypes.RESET_USERS:
-            console.log(state.users)
             return { ...state, filterText: '', filterUsers: state.resetUsers, users: state.resetUsers };
 
         default: 
